@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Select.css'
 
 
 export default function Select({options, value, onChange, placeholder, allowDeselect}) {
 
     const [selectedValue, setSelectedValue] = useState(value);
+    useEffect(() => setSelectedValue(value), [value]);
 
     const selectedOption = options.find(option => option.value === selectedValue);
     const displayedText = selectedOption

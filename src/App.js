@@ -16,6 +16,9 @@ function App() {
     <div className="App">
      <Select options={languages} value={language} onChange={value => setLanguage(value)} placeholder="Pick Language"></Select>
      <div className="txt">YOU CHOOSE OPTION: {language}</div>
+     <button onClick={() => setLanguage('en')}>en</button>
+     <button onClick={() => setLanguage('he')}>he</button>
+     <button onClick={() => setLanguage('fr')}>fr</button>
     </div>
   );
 }
