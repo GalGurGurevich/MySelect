@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import './Select.css'
 
 
-export default function Select({options, value, onChange}) {
+export default function Select({options, value, onChange, placeholder, allowDeselect}) {
 
     const [selectedValue, setSelectedValue] = useState(value);
 
     const selectedOption = options.find(option => option.value === selectedValue);
+    const displayedText = selectedOption
+        ? selectedOption.text
+        : placeholder;
 
     function updateValue(val) {
         onChange(val);
@@ -16,12 +19,13 @@ export default function Select({options, value, onChange}) {
     return(
     <div className="wrapper">
             <div className="toggle">
-                {selectedOption.text}
+                {displayedText}
                 <div className="arrow"/>
             </div>
 
             <div className="dropdown">
-            {options.map((option) => <div className="option" onClick={() => updateValue(option.value)}>{option.text}</div>)}
+            {allowDeselect ? <div className="option" onClick={() => updateValue(null)}>&nbsp;</div> : null}
+            {options.map((option) => <div className="option" onClick={() => updateValue(option.value)}>{option.text}&nbsp;</div>)}
             </div> 
         </div>
 )}

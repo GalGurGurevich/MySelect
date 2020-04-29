@@ -10,11 +10,11 @@ function App() {
     { value: 'fr', text: 'français'}
   ];
 
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState(null);
 
   return (
     <div className="App">
-     <Select options={languages} value={language} onChange={value => setLanguage(value)}></Select>
+     <Select options={languages} value={language} onChange={value => setLanguage(value)} placeholder="Pick Language"></Select>
      <div className="txt">YOU CHOOSE OPTION: {language}</div>
     </div>
   );
