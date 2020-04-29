@@ -5,6 +5,7 @@
 .toggle {
     display: inline-block;
     background-color: aquamarine;
+    padding-right: 15px;
 }
 .arrow {
     border-left: 7px solid transparent;
@@ -12,8 +13,16 @@
     border-top: 15px solid blue;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
+.wrapper:hover .arrow {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 15px solid red;
+    border-top: none;
+}
+
 .dropdown {
     display: none;
     background-color: pink;
@@ -24,6 +33,10 @@
 }
 .option {
     background-color: green
+}
+
+.option:hover {
+    background-color: lightgreen;
 }
 
 .wrapper:hover .dropdown {
