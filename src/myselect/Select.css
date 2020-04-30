@@ -51,6 +51,7 @@
     background-color: rgba(58, 45, 45, 0.171);
 }
 
+/*In case you switch page dir, select arrow change too*/
 [dir=rtl] .toggle {
     padding: 0.3em 1em 0.3em 2em;
 }
