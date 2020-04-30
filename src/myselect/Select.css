@@ -1,44 +1,61 @@
 .wrapper {
     display: inline-block;
     position: relative;
+    cursor: pointer;
 }
+
 .toggle {
     display: inline-block;
-    background-color: aquamarine;
-    padding-right: 15px;
+    background-color: transparent;
+    padding: 0.3em 2em 0.3em 1em;
+    border: 1px solid currentColor;
 }
-.arrow {
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 15px solid blue;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+.wrapper.open .dropdown {
+    display: block;
 }
-.wrapper:hover .arrow {
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 15px solid red;
+.wrapper.open .arrow {
+    border-bottom: 0.4em solid currentColor;
     border-top: none;
 }
 
 .dropdown {
     display: none;
-    background-color: pink;
+    background-color: transparent;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
+    background-color: white;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, .3);
 }
+
+.arrow {
+    border-left: 0.3em solid transparent;
+    border-right: 0.3em solid transparent;
+    border-top: 0.4em solid currentColor;
+    position: absolute;
+    right: 0.6em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .option {
-    background-color: green
+    background-color: transparent;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0.3em 1em;
 }
-
+.option.selected,
 .option:hover {
-    background-color: lightgreen;
+    background-color: rgba(58, 45, 45, 0.171);
 }
 
-.wrapper:hover .dropdown {
-    display: block;
+[dir=rtl] .toggle {
+    padding: 0.3em 1em 0.3em 2em;
+}
+
+[dir=rtl] .arrow {
+    left: 0.6em;
+    right: auto;
 }
